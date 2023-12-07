@@ -11,6 +11,7 @@ const Card_id = ({ data }) => {
       borderRadius="lg"
       overflow="hidden"
       p={4}
+      color={"white"}
       boxShadow="md"
       style={{
         backgroundImage:
@@ -21,7 +22,11 @@ const Card_id = ({ data }) => {
       <Badge fontSize={"xl"} colorScheme="black" mb={2}>
         {data[1]}
       </Badge>
-      <Flex justifyContent={"space-between"} alignItems={"center"}>
+      <Flex
+        color={"white"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+      >
         <Image
           height={"100px"}
           width={"100px"}
