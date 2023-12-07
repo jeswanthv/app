@@ -181,7 +181,7 @@ function EditForm({ step, setActiveStep, textData }) {
               />
             </FormControl>
             <FormControl isRequired p={2}>
-              <FormLabel>Expiry(MM/DD/YYYY)</FormLabel>
+              <FormLabel>Expiry(YYYY/MM/DD)</FormLabel>
               <Input
                 value={form.expiry}
                 onChange={handleChange}

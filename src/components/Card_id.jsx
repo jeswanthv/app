@@ -32,7 +32,7 @@ const Card_id = ({ data }) => {
           width={"100px"}
           objectFit={"cover"}
           borderRadius={"500px"}
-          src="https://media.licdn.com/dms/image/D5635AQGUTZEXZFYNxg/profile-framedphoto-shrink_800_800/0/1698697437052?e=1702000800&v=beta&t=CYwukOX7aWw8Z5OSflgwIgFA4XupuBAQr325D8OlYjI"
+          src="https://avatars.githubusercontent.com/u/48980002?s=400&u=1e522e6bd17bddc72186a1e06a3a1867f0a62a71&v=4"
           alt="name"
         />
         <Flex mx={"5"} justifyContent={"space-between"} direction={"column"}>
