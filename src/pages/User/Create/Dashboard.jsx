@@ -24,12 +24,13 @@ import {
   getOTP,
   getOneidDetails,
   getUserStatus,
+  getVerificationInfo,
 } from "../../../utils/apiService";
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [verified, setVerified] = useState(false);
+  const [verified, setVerified] = useState("");
   const [status, setStatus] = useState("");
   const [data, setData] = useState(null);
   const [otp, setOtp] = useState("");
@@ -48,6 +49,10 @@ const Dashboard = () => {
     response.then((data) => {
       setData(data?.data.data[0]);
       setLoading(false);
+    });
+    const verification = getVerificationInfo(user);
+    verification.then((data) => {
+      setVerified(data?.data.data[0][3]);
     });
   }, []);
 
@@ -135,6 +140,9 @@ const Dashboard = () => {
                     <Image boxSize="60vh" alt={"Login Image"} src={Errorsvg} />
                     <Text textAlign={"center"} fontSize="2xl" fontWeight="bold">
                       Notary has denied your request.
+                    </Text>
+                    <Text textAlign={"center"} fontSize="xl" fontWeight="bold">
+                      {verified}
                     </Text>
                   </>
                 </>

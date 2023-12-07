@@ -245,3 +245,15 @@ export const raiseUserDispute = async (id, comment) => {
     throw error;
   }
 };
+
+export const getVerificationInfo = async (email) => {
+  try {
+    const res = axios.post(`${BASE_URL}/get_verification_info`, {
+      email,
+    });
+    return res;
+  } catch (error) {
+    console.log("api error", error);
+    throw error;
+  }
+};
