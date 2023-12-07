@@ -104,14 +104,16 @@ const LogTable = ({ color, email, role }) => {
                       <Td textAlign={"left"}>{item[6]}</Td>
                       <Td textAlign={"left"}>{item[5]}</Td>
                       <Td textAlign={"right"}>
-                        <Button
-                          rightIcon={<ArrowForwardIcon />}
-                          colorScheme="red"
-                          size="sm"
-                          onClick={() => handleId(item[0])}
-                        >
-                          Raise dispute
-                        </Button>
+                        {role !== "admin" && (
+                          <Button
+                            rightIcon={<ArrowForwardIcon />}
+                            colorScheme="red"
+                            size="sm"
+                            onClick={() => handleId(item[0])}
+                          >
+                            Raise dispute
+                          </Button>
+                        )}
                       </Td>
                     </Tr>
                   ))}

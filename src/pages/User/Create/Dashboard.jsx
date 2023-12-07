@@ -34,6 +34,7 @@ const Dashboard = () => {
   const [status, setStatus] = useState("");
   const [data, setData] = useState(null);
   const [otp, setOtp] = useState("");
+  const [one_d, setOne_d] = useState("");
   const [loading, setLoading] = useState(true);
 
   const user = localStorage.getItem("email");
@@ -59,7 +60,8 @@ const Dashboard = () => {
   const handleOTP = () => {
     const res = getOTP(user);
     res.then((data) => {
-      setOtp(data?.data.data[0]);
+      setOtp(data?.data.data[0][1]);
+      setOne_d(data?.data.data[0][0]);
       onOpen();
     });
   };
@@ -69,10 +71,13 @@ const Dashboard = () => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>OTP</ModalHeader>
+          <ModalHeader>ID and OTP</ModalHeader>
           <ModalCloseButton />
-          <ModalBody textAlign={"center"}>
-            <Text fontSize={"4xl"}>{otp}</Text>
+          <ModalBody textAlign={"left"}>
+            <Text fontSize={"4xl"}>ID:{one_d}</Text>
+          </ModalBody>
+          <ModalBody textAlign={"left"}>
+            <Text fontSize={"4xl"}>OTP:{otp}</Text>
           </ModalBody>
 
           <ModalFooter>
