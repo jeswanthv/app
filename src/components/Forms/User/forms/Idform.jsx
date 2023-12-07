@@ -18,7 +18,6 @@ import {
   useColorMode,
   useToast,
 } from "@chakra-ui/react";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import IdType from "../../../../components/IdType";
@@ -45,39 +44,13 @@ export default function Idform({ step, setActiveStep, setTextData }) {
     formData.append("doc_state", state);
     formData.append("email", user);
 
-    await axios
-      .post(
-        "https://22e9-2601-646-a080-7c60-50bd-2cd8-1841-9296.ngrok-free.app/upload",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      )
-      .then((response) => {
-        console.log(response);
-        if (response.status === 200) {
-          // window.location.reload();
-          // window.location = "/files";
-          console.log(response);
-          toast({
-            title: "Picture Uploaded",
-            position: "top",
-            status: "success",
-            duration: 9000,
-            isClosable: true,
-          });
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-        if (error.response) {
-          // The request was made and the server responded with a status code
-          // that falls out of the range of 2xx
-          // setShow(true);
-        }
-      });
+    toast({
+      title: "Picture Uploaded",
+      position: "top",
+      status: "success",
+      duration: 9000,
+      isClosable: true,
+    });
   };
 
   const handleChange = async (e) => {

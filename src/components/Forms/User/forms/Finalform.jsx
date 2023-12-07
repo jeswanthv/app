@@ -70,7 +70,7 @@ function FinalForm({ step, setActiveStep }) {
       </Flex>
       <Flex>
         <FormControl isRequired p={2}>
-          <FormLabel>Notary Service</FormLabel>
+          <FormLabel>Nearby Notary Service</FormLabel>
           <Select onChange={handleChange} type="text" name="notary">
             <>
               {values.map((value, key) => (

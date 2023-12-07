@@ -45,6 +45,10 @@ const Dashboard = () => {
       const stat = data?.data[0][0];
 
       setStatus(stat);
+      const verification = getVerificationInfo(user);
+      verification.then((data) => {
+        if (stat === "not_verified") setVerified(data?.data?.data[0][3]);
+      });
     });
     const response = getOneidDetails(user);
     response.then((data) => {
@@ -52,9 +56,11 @@ const Dashboard = () => {
       setLoading(false);
     });
     const verification = getVerificationInfo(user);
-    verification.then((data) => {
-      setVerified(data?.data.data[0][3]);
-    });
+    // verification.then((data) => {
+    //   const data1 = data?.data?.data[0][3] || "";
+
+    //   setVerified(data1);
+    // });
   }, []);
 
   const handleOTP = () => {

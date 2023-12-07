@@ -106,6 +106,8 @@ export const uploadNotaryTextdata = async (formData) => {
 };
 export const uploadTextdata = async (formData) => {
   const {
+    document,
+    documentNumber,
     firstname,
     lastname,
     dob,
@@ -118,6 +120,7 @@ export const uploadTextdata = async (formData) => {
     state,
     occupation,
     email,
+    expiry,
   } = formData;
   const age = getAge(dob);
   console.log(age);
@@ -136,6 +139,9 @@ export const uploadTextdata = async (formData) => {
       state,
       occupation,
       email,
+      document_expiry_date: expiry,
+      doc_number: documentNumber,
+      doc_type: document,
     });
     console.log(res.data);
     return res;
