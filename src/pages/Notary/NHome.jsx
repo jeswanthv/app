@@ -60,7 +60,7 @@ const NHome = () => {
                   <NotaryForm data={data} Ncountry={Ncountry} Nstate={Nstate} />
                 </Flex>
               ) : (
-                <OTPForm setData={setData} />
+                <OTPForm setData={setData} email={email} role="notary" />
               )}
             </>
           )}

@@ -25,7 +25,12 @@ const OTPForm = ({ setData, email, role }) => {
       const res = getUserDetails(OTP, id, email, role);
       res.then((data) => {
         console.log(data);
-        setData(data.data[0]);
+        if (role === "notary") {
+          setData(data.data);
+        }
+        if (role === "checker") {
+          setData(data.data[0]);
+        }
       });
     } catch (error) {
       console.log(error);

@@ -44,7 +44,7 @@ const LogTable = ({ color, email, role }) => {
 
   const handleDispute = () => {
     console.log(dispute, id);
-    const res = raiseUserDispute(email, role);
+    const res = raiseUserDispute(id, dispute);
     res.then((data) => {
       console.log(data);
     });
@@ -104,6 +104,7 @@ const LogTable = ({ color, email, role }) => {
                       <Td textAlign={"left"}>{item[6]}</Td>
                       <Td textAlign={"left"}>{item[5]}</Td>
                       <Td textAlign={"right"}>
+                        {console.log(item)}
                         {role !== "admin" && (
                           <Button
                             rightIcon={<ArrowForwardIcon />}
