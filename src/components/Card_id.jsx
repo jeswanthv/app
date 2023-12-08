@@ -32,7 +32,7 @@ const Card_id = ({ data }) => {
           width={"100px"}
           objectFit={"cover"}
           borderRadius={"500px"}
-          src="https://media.licdn.com/dms/image/C5603AQE7m3hUrnrXOg/profile-displayphoto-shrink_800_800/0/1589694641862?e=1707350400&v=beta&t=JWhfpRAhIEJw0x2yP_A1MEZicWwSI6Tr7MwHRSEC5eY"
+          src="https://avatars.githubusercontent.com/u/48980002?v=4"
           alt="name"
         />
         <Flex mx={"5"} justifyContent={"space-between"} direction={"column"}>
@@ -46,7 +46,7 @@ const Card_id = ({ data }) => {
             Age: {data[6]}
           </Text>
           <Text fontWeight="normal" fontSize="lg">
-            Expiry: 05/18/2033
+            Expiry: {data[14]}
           </Text>
         </Flex>
         <Flex
